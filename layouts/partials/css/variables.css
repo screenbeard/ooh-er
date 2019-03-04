@@ -1,9 +1,11 @@
-/*https://coolors.co/afd5aa-f0f2ef-a69f98-3d3d3d-8c6057*/
+/*https://coolors.co/2f559a-b3262a-e46425-f5db12-5aadc5*/
 :root {
-  --main-color: #8C6056; 
-  --secondary-color: #AFD5AA;
-  --logo-text-color: #fff;
-  --body-text-color: #3d3d3d;
-  --heading-text-color: #383838;
+  --main-color: #2f559a; 
+  --secondary-color: #e46425;
+  --logo-text-color: #f5db12;
+  --heading-text-color: #b3262a;
+  --link-text-color: #2f559a;
+  --link-visited-color: #5aadc5;
   --background-color: #fff;
+  --body-text-color: #231f20;
 }
