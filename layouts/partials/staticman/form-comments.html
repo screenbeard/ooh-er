@@ -1,0 +1,28 @@
+<form
+    method="POST"
+    action="{{ .Site.Params.Staticman.endpoint }}{{ .Site.Params.Staticman.username }}/{{ .Site.Params.Staticman.repository }}/{{ .Site.Params.Staticman.branch }}/comments"
+    class="pa4 black-80 mb4">
+    <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
+    <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
+    <div class="mb3">
+        <label for="fields[name]" class="f6 b db mb2">Name <span class="normal black-60">(required)</span></label>
+        <input name="fields[name]" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" placeholder="Your name">
+        <small id="name-desc" class="f6 black-60 db mb2">Your name will be displayed against your comment</small>
+    </div>
+    <div class="mb3">
+        <label for="fields[email]" class="f6 b db mb2">Email <span class="normal black-60">(required)</span></label>
+        <input name="fields[email]" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="email" placeholder="Your email address">
+        <small id="name-desc" class="f6 black-60 db mb2">Email will be hashed and used to get a <a class="link black-80 hover-blue" href="https://en.gravatar.com/">Gravatar</a></small>
+    </div>
+    <div class="mb3">
+        <label for="fields[url]" class="f6 b db mb2">Website <span class="normal black-60">(optional)</span></label>
+        <input name="fields[url]" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" placeholder="Your website address">
+        <small id="name-desc" class="f6 black-60 db mb2">Free promotion?</small>
+    </div>
+    <div class="mb3">
+        <label for="fields[message]" class="f6 b db mb2">Comment</label>
+        <textarea name="fields[message]" class="db border-box hover-black w-100 ba b--black-20 pa2 br2 mb2" placeholder="Your message."></textarea>
+        <small id="comment-desc" class="f6 black-60">Feel free to use <a href="https://guides.github.com/features/mastering-markdown/#syntax" class="link black-80 hover-blue">Markdown</a>.</small>
+    </div>
+    <input type="submit" class="f6 link dim br3 ba bw1 ph3 pv2 mb2 dib black fr" value="Submit">
+</form>

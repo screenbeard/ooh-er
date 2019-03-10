@@ -1,0 +1,29 @@
+{{ $comments := readDir "data/comments" }}
+{{ $.Scratch.Add "hasComments" 0 }}
+{{ $entryId := .UniqueID }}
+
+<ul class="list pl0">
+{{ range $comments }}
+    {{ if eq .Name $entryId }}
+        {{ $.Scratch.Add "hasComments" 1 }}
+        {{ range $index, $comments := (index $.Site.Data.comments $entryId ) }}
+    <li class="cf ph2-ns bt b--light-silver mb3">
+        <div class="fl w-80 mt2">
+            <p>{{ .message | markdownify }}</p>
+        </div>
+        <div class="fl w-20 pt3 mt2">
+            <img class="br4 h2 w2 dib fr" src="https://www.gravatar.com/avatar/{{ .email }}?s=50">
+        </div>
+        <p class="fl w-100 pa2 cf">
+            <span class="silver f6 fl w-60"><time>{{ dateFormat "02 Jan 2006" (int .date) }}</time> {{ with .url }} | <a class="link silver hover-blue" href="{{ . }}">{{ . }}</a>{{ end }}</span>
+            <span class="fl w-40 tr dib">{{ .name }}</span>
+        </p>
+    </li>
+        {{ end }}
+    {{ end }}
+{{ end }}
+</ul>
+
+{{ if eq ($.Scratch.Get "hasComments") 0 }}
+    <p>You can be the first to comment.</p>
+{{ end }}

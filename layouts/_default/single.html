@@ -14,6 +14,11 @@
     </p>
     <div class="lh-copy post-content">{{ .Content }}</div>
   </section>
+  <aside class="comments">
+    <h2>Comments</h2>
+    {{ partial "staticman/form-comments.html" . }}
+    {{ partial "staticman/show-comments.html" . }}
+  </aside>
 </main>
 {{ partial "table-of-contents" . }}
 
