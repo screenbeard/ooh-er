@@ -1,3 +1,5 @@
+{{ if ge (.Date) (now.AddDate 0 -1 0) }}
+{{ $rand :=  shuffle (seq 0 9) }}
 <form
     method="POST"
     action="{{ .Site.Params.Staticman.endpoint }}{{ .Site.Params.Staticman.username }}/{{ .Site.Params.Staticman.repository }}/{{ .Site.Params.Staticman.branch }}/comments"
@@ -12,17 +14,32 @@
     <div class="mb3">
         <label for="fields[email]" class="f6 b db mb2">Email <span class="normal black-60">(required)</span></label>
         <input name="fields[email]" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="email" placeholder="Your email address">
-        <small id="name-desc" class="f6 black-60 db mb2">Email will be hashed and used to get a <a class="link black-80 hover-blue" href="https://en.gravatar.com/">Gravatar</a></small>
+        <small id="email-desc" class="f6 black-60 db mb2">Email will be hashed and used to get a <a class="link black-80 hover-blue" href="https://en.gravatar.com/">Gravatar</a></small>
     </div>
     <div class="mb3">
         <label for="fields[url]" class="f6 b db mb2">Where are you from? <span class="normal black-60">(optional)</span></label>
         <input name="fields[url]" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" placeholder="Share your site">
-        <small id="name-desc" class="f6 black-60 db mb2">Where can I read more?</small>
+        <small id="url-desc" class="f6 black-60 db mb2">Where can I read more?</small>
+    </div>
+    <div class="mb3">
+        <label for="fields{{$rand}}" class="f6 b db mb2">Don't fill this in <span class="normal black-60">(required)</span></label>
+        <input name="fields{{$rand}}" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" placeholder="Leave me be">
+        <small id="xarblon-desc" class="f6 black-60 db mb2">Honestly, leave this blank.</small>
     </div>
     <div class="mb3">
         <label for="fields[message]" class="f6 b db mb2">Comment</label>
         <textarea name="fields[message]" class="db border-box hover-black w-100 ba b--black-20 pa2 br2 mb2" placeholder="Your message."></textarea>
         <small id="comment-desc" class="f6 black-60">Feel free to use <a href="https://guides.github.com/features/mastering-markdown/#syntax" class="link black-80 hover-blue">Markdown</a>.</small>
+        <small id="comment-desc" class="f6 black-60">Submissions are added as <a href="https://github.com/screenbeard/personal-chronicle/pulls" class="link black-80 hover-blue">Pull Requests on the git repository</a> and will not be published automatically. Please be patient.</small>
     </div>
     <input type="submit" class="f6 link dim br3 ba bw1 ph3 pv2 mb2 dib black fr" value="Submit">
 </form>
+{{ else }}
+    <p>
+        Comments are closed. You can still interract on
+        <a href="https://github.com/screenbeard/personal-chronicle" class="link black-80 hover-blue">Github</a>,
+        <a href="https://t.me/TheGeekoriumChat" class="link black-80 hover-blue">Telegram</a>,
+        <a href="https://twitter.com/screenbeard" class="link black-80 hover-blue">Twitter</a> or
+        <a href="https://discord.gg/MdRrxQC" class="link black-80 hover-blue">Discord</a>.
+    </p>
+{{ end }}
