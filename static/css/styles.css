@@ -37,6 +37,10 @@ p code {
   background-color: #f8f8f8;
 }
 
+button, input[type="submit"] {
+    background: inherit;
+}
+
 section.post {
   margin-bottom: 3em;
 }
@@ -56,6 +60,11 @@ section.post {
     transition: opacity .5s, visibility .5s;
 }
 
+#search {
+
+    max-width: 180px;
+}
+
 .is-active-link::before { background-color: var(--secondary-color); }
 
 @media (min-width: 1200px) {
@@ -63,9 +72,14 @@ section.post {
     display: block;
     top: 100px;
   }
-  #tag-cloud {
+  #tag-cloud, #site-search{
     -webkit-transition: opacity .5s, visibility .5s;
     transition: opacity .5s, visibility .5s;
+  }
+  #site-search {
+    display: block;
+    top: 400px;
+    max-width: 250px
   }
 }
 @media (min-width: 1330px) { #contents-list>.toc-list { max-width: 300px; right: 3rem;}}

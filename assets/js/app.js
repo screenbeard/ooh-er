@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    {{ if or (.Site.Params.showTagCloud | default true) (.Site.Params.showtoc | default true) (.Site.Params.showScrollToTop | default true) }}
+    {{ if or (.Site.Params.showTagCloud | default true) (.Site.Params.showSearch | default true) (.Site.Params.showtoc | default true) (.Site.Params.showScrollToTop | default true) }}
 
     window.addEventListener("load", function(){
         {{ if .Site.Params.showScrollToTop | default true }}
@@ -23,6 +23,18 @@
                     } else {
                             document.getElementById("tag-cloud").style.visibility = "hidden";
                             document.getElementById("tag-cloud").style.opacity = "0";
+                    }
+            }
+            {{ end }}
+
+            {{ if .Site.Params.showSearch | default true }}
+            if (document.getElementById("site-search") !== null) {
+                    if (prevScrollpos > currentScrollPos) { // scroll up
+                            document.getElementById("site-search").style.visibility = "visible";
+                            document.getElementById("site-search").style.opacity = "1";
+                    } else {
+                            document.getElementById("site-search").style.visibility = "hidden";
+                            document.getElementById("site-search").style.opacity = "0";
                     }
             }
             {{ end }}
