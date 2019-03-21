@@ -1,6 +1,6 @@
 # Ooh-Er.
 
-A personalised version of (Er)[https://github.com/lingxz/er] the configurable blog theme for Hugo, with elements inspired by [this blog](https://aranair.github.io/posts/).
+A personalised version of [Er](https://github.com/lingxz/er) the configurable blog theme for Hugo, with elements inspired by [this blog](https://aranair.github.io/posts/).
 
 ## Features
 - No inline JS or CSS - everything is moved to seperate files for better security
