@@ -1,0 +1,16 @@
+name: Ooh-Er
+license: MIT
+licenselink: https://github.com/screenbeard/ooh-er/blob/master/LICENSE.md
+description: A much more personalised Hugo theme for journaling
+homepage: http://github.com/screenbeard/ooh-er
+tags:
+- responsive
+- white
+- journal
+features:
+- responsive
+- journal
+min_version: '0.38'
+author:
+    name: screenbeard
+    homepage: https://the.geekorium.com.au
