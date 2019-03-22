@@ -83,6 +83,12 @@ iframe.youtube-player{
     border: 0;
 }
 
+iframe.soundcloud-player{
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
 @media (min-width: 1200px) {
   #contents-list>.toc-list, #tag-cloud  {
     display: block;
