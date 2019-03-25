@@ -61,8 +61,12 @@ section.post {
 }
 
 #search {
-
     max-width: 180px;
+}
+
+.footnote-ref a, a.footnote-return {
+    border: none;
+    padding-left: 0.2rem;
 }
 
 .is-active-link::before { background-color: var(--secondary-color); }

@@ -11,6 +11,9 @@
       {{ with .Params.tags }}
       tags: [ {{ range . }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ]
       {{ end }}
+      {{ with .Params.series }}
+      series: [ {{ range . }}<a href='{{ "/series/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ]
+      {{ end }}
     </p>
     <div class="lh-copy post-content">{{ .Content }}</div>
   </section>

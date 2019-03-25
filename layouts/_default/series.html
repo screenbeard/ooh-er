@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
 <main class="center mv4 content-width ph3">
-    {{ range $paginator.Pages }}
+    {{ range $paginator.Pages.Reverse }}
     <section class="post">
       <a class="f3 fw6 heading-color heading-font no-underline post-title" href="{{ .Permalink }}">{{ .Title }}</a>
       <p class="silver f6 mt1 mb4 post-meta">
