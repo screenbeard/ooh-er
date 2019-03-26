@@ -10,6 +10,7 @@
 {{ $app := resources.Get "js/app.js" }}
 {{ $matomo := resources.Get "js/matomo.js" }}
 {{ $scripts := slice $app $matomo | resources.Concat "app.js" | resources.ExecuteAsTemplate "main.js" . | fingerprint }}
+<noscript><p><img src="https://visitors.geekorium.com.au/matomo.php?idsite=2&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 <script type="text/javascript" src="{{ $scripts.Permalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
 
 {{ if .Params.math }}

@@ -1,7 +1,7 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
+{{ $paginator := .Paginate (where .Data.Pages.ByDate "Type" "in" .Site.Params.mainSections) }}
 <main class="center mv4 content-width ph3">
-    {{ range $paginator.Pages.Reverse }}
+    {{ range $paginator.Pages.ByDate }}
     <section class="post">
       <a class="f3 fw6 heading-color heading-font no-underline post-title" href="{{ .Permalink }}">{{ .Title }}</a>
       <p class="silver f6 mt1 mb4 post-meta">
@@ -23,5 +23,5 @@
 </main>
 {{ partial "tag_cloud.html" . }}
 {{ partial "site_search.html" . }}
-{{ partial "pagination.html" . }}
+{{ partial "pagination_reverse.html" . }}
 {{ end }}

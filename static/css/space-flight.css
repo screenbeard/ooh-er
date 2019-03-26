@@ -5,65 +5,48 @@
 .voice-in-the-dark {
   color: var(--heading-text-color);
   display: inline-block;
-  font-weight: 900;
 }
 
-.timeline1 {
-  display: block;
-  background-color: #f5db12;
-  color: #231f20;
-  border-left: #9CCEDC 20px solid;
-  border-right: #f5db12 20px solid;
+.timeswap .timeline1 {
+    display: inline;
+}
+.timeswap .timeline1::before {
+    content: '🌔 ';
+}
+.timeswap .timeline2::before {
+    content: '🌖 ';
 }
 
-h1.timeline1 {
-  border-left: 0;
-  border-right: 0;
+.timeswap .timeline2 {
+    display: none;
 }
 
-h1.timeline1 a {
-  color: #231f20;
+.timeswap:hover .timeline1 {
+    display: none;
 }
 
-.timeline2 {
-  display: none;
-  height:0;
-  width:0;
+.timeswap:hover .timeline2 {
+    display: inline;
 }
 
 .timereverse-1 {
-background: rgb(47,85,154); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(47,85,154,1) 0%, rgba(96,125,178,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(47,85,154,1)), color-stop(100%,rgba(96,125,178,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(47,85,154,1) 0%,rgba(96,125,178,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(47,85,154,1) 0%,rgba(96,125,178,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(47,85,154,1) 0%,rgba(96,125,178,1) 100%); /* IE10+ */
-background: linear-gradient(top,  rgba(47,85,154,1) 0%,rgba(96,125,178,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f559a', endColorstr='#607db2',GradientType=0 ); /* IE6-9 */
+    background: -webkit-linear-gradient(rgba(47,85,154,1) 0%, rgba(96,125,178,1) 100%);
+    background: -o-linear-gradient(rgba(47,85,154,1) 0%, rgba(96,125,178,1) 100%);
+    background: linear-gradient(rgba(47,85,154,1) 0%, rgba(96,125,178,1) 100%); /* W3C */
 }
 
 .timereverse-2 {
-background: rgb(96,125,178); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(96,125,178,1) 0%, rgba(181,195,219,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(96,125,178,1)), color-stop(100%,rgba(181,195,219,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(96,125,178,1) 0%,rgba(181,195,219,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(96,125,178,1) 0%,rgba(181,195,219,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(96,125,178,1) 0%,rgba(181,195,219,1) 100%); /* IE10+ */
-background: linear-gradient(top,  rgba(96,125,178,1) 0%,rgba(181,195,219,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#607db2', endColorstr='#b5c3db',GradientType=0 ); /* IE6-9 */
+    background: -webkit-linear-gradient(rgba(96,125,178,1) 0%, rgba(181,195,219,1) 100%);
+    background: -o-linear-gradient(rgba(96,125,178,1) 0%, rgba(181,195,219,1) 100%);
+    background: linear-gradient(rgba(96,125,178,1) 0%, rgba(181,195,219,1) 100%); /* W3C */
 }
 
 .timereverse-3 {
-background: rgb(181,195,219); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(181,195,219,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,195,219,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(181,195,219,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(181,195,219,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(181,195,219,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-background: linear-gradient(top,  rgba(181,195,219,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c3db', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    background: -webkit-linear-gradient(rgba(181,195,219,1) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(rgba(181,195,219,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(rgba(181,195,219,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .timereverse-1, .timereverse-2, .timereverse-3 {
-padding: 5px;
+    padding: 5px;
 }

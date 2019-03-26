@@ -3,6 +3,7 @@
     var _paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(["setDomains", ["*.the.geekorium.com.au"]]);
+    _paq.push(["setDoNotTrack", true]);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
