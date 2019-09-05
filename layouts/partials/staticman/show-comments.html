@@ -1,6 +1,6 @@
 {{ $comments := readDir "data/comments" }}
 {{ $.Scratch.Add "hasComments" 0 }}
-{{ $entryId := .UniqueID }}
+{{ $entryId := .File.UniqueID }}
 
 <ul class="list pl0">
 {{ range $comments }}
@@ -17,6 +17,7 @@
         <p class="fl w-100 pa2 cf">
             <span class="silver f6 fl w-60"><time>{{ dateFormat "02 Jan 2006" (int .date) }}</time> {{ with .url }} | <a class="link silver hover-blue" href="{{ . }}">{{ . }}</a>{{ end }}</span>
             <span class="fl w-40 tr dib">{{ .name }}</span>
+            <span class="fl w-100 tr dib">{{ .title }}</span>
         </p>
     </li>
         {{ end }}
