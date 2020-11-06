@@ -5,7 +5,19 @@
   --logo-text-color: #f5db12;
   --heading-text-color: #b3262a;
   --link-text-color: #2f559a;
-  --link-visited-color: #5aadc5;
+  --link-visited-color: #2E003B;
   --background-color: #fff;
   --body-text-color: #231f20;
+  --code-background-color: rgba(27, 31, 35, 0.05);
 }
+/*
+color-scheme {
+    persimmon: #e46425;
+    firebrick: #b3262a;
+    yellow-pantone: #f5db12;
+    maximum-blue: #5aadc5;
+    bdazzled-blue: #2f559a;
+    russian-violet: #2e003b
+    raisin-black: #231f20;
+}
+*/

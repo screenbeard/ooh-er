@@ -1,11 +1,7 @@
-{{ if ge (.Date) (now.AddDate 0 -1 0) }}
-{{ $rand :=  shuffle (seq 0 9) }}
-<form
-    method="POST"
-    action="{{ .Site.Params.Staticman.endpoint }}{{ .Site.Params.Staticman.username }}/{{ .Site.Params.Staticman.repository }}/{{ .Site.Params.Staticman.branch }}/comments"
-    class="pa4 black-80 mb4">
+{{ if ge (.Date) (now.AddDate 0 -1 0) }} {{ $rand := shuffle (seq 0 9) }}
+<form method="POST" action="{{ .Site.Params.Staticman.endpoint }}{{ .Site.Params.Staticman.username }}/{{ .Site.Params.Staticman.repository }}/{{ .Site.Params.Staticman.branch }}/comments" class="pa4 black-80 mb4">
     <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
-    <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
+    <input type="hidden" name="options[entryId]" value="{{ .File.UniqueID }}">
     <div class="mb3">
         <label for="fields[name]" class="f6 b db mb2">Name <span class="normal black-60">(required)</span></label>
         <input name="fields[name]" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" placeholder="Your name">
@@ -35,11 +31,14 @@
     <input type="submit" class="f6 link dim br3 ba bw1 ph3 pv2 mb2 dib black fr" value="Submit">
 </form>
 {{ else }}
-    <p>
-        Comments are closed. You can still interact on
-        <a href="https://github.com/screenbeard/personal-chronicle" class="link black-80 hover-blue">Github</a>,
-        <a href="https://t.me/TheGeekoriumChat" class="link black-80 hover-blue">Telegram</a>,
-        <a href="https://twitter.com/screenbeard" class="link black-80 hover-blue">Twitter</a> or
-        <a href="https://discord.gg/MdRrxQC" class="link black-80 hover-blue">Discord</a>.
-    </p>
+<p>
+    Comments are closed.
+</p>
 {{ end }}
+<p>
+    You can interact with me direct 
+    <a href="https://matrix.to/#/!aseIaZjqxrBjowDwgM:demands.coffee" class="link black-80 hover-blue">via the Geekorium Matrix Room #the.geekorium:demands.coffee</a>,
+    <a href="https://github.com/screenbeard/personal-chronicle" class="link black-80 hover-blue">on Github</a>,
+    <a href="https://aus.social/@screenbeard" class="link black-80 hover-blue">on the Fediverse</a>, or
+    <a href="https://discord.gg/MdRrxQC" class="link black-80 hover-blue">on Discord</a>.
+</p>

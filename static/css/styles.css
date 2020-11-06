@@ -1,41 +1,89 @@
-html { font-size: 16px; }
-body { color: var(--body-text-color); background-color: var(--background-color);}
-.main-color { color: var(--main-color); }
-.secondary-color { color: var(--secondary-color); }
-.bg-main-color { background-color: var(--main-color); color: var(--logo-text-color); }
-.heading-font, .global-font { font-family: "Source Sans Pro"; }
-.heading-color { color: var(--heading-text-color); }
-.post-content a, .list-pages a, .pagination a {
-  border-bottom: 1px solid rgba(0,0,0,0.4);
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--body-text-color);
+  background-color: var(--background-color);
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.bg-main-color {
+  background-color: var(--main-color);
+  color: var(--logo-text-color);
+}
+
+.heading-font,
+.global-font {
+  font-family: "Source Sans Pro";
+}
+
+.heading-color {
+  color: var(--heading-text-color);
+}
+
+.post-content a,
+.list-pages a,
+.pagination a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   text-decoration: none;
   color: var(--link-text-color);
 }
-.post-content a:visited, .list-pages a:visited, .pagination a:visited {
+
+.post-content a:visited,
+.list-pages a:visited,
+.pagination a:visited {
   color: var(--link-visited-color);
 }
-main a:hover, .list-pages a:hover, .pagination a:hover, #tag-cloud a:hover {
+
+main a:hover,
+.list-pages a:hover,
+.pagination a:hover,
+#tag-cloud a:hover {
   border-bottom: 1px solid var(--body-text-color);
   color: var(--body-text-color);
 }
-.content-width { max-width: 650px; }
-h1, h2, h3, h4, h5, h6 {
+
+.content-width {
+  max-width: 650px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 0px;
   color: var(--main-color);
   font-weight: 600;
 }
 
-#site-title{
-    position: relative;
+ol {
+  list-style-type: decimal;
 }
-#site-title span{
-    background-image: url("../geekorium-medium-logo-rocket.png");
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: white;
-    background-size: cover;
+
+#site-title {
+  position: relative;
+}
+
+#site-title span {
+  background-image: url("../geekorium-banner.png");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  background-size: cover;
 }
 
 pre {
@@ -45,21 +93,26 @@ pre {
   line-height: 1.25em;
 }
 
-p code {
+p code,
+li code {
   padding: .25rem .5rem;
   font-size: 0.9em;
-  background-color: #f8f8f8;
+  background-color: var(--code-background-color);
 }
 
-button, input[type="submit"] {
-    background: inherit;
+button,
+input[type="submit"] {
+  background: inherit;
 }
 
 section.post {
   margin-bottom: 3em;
 }
 
-#tag-cloud { max-width: 250px; }
+#tag-cloud {
+  max-width: 250px;
+}
+
 #contents-list>.toc-list {
   max-width: 250px;
   overflow: hidden;
@@ -68,75 +121,105 @@ section.post {
 }
 
 #scroll-to-top {
-    color: #fff;
-    visibility: hidden;
-    display: none;
-    transition: opacity .5s, visibility .5s;
+  color: #fff;
+  visibility: hidden;
+  display: none;
+  transition: opacity .5s, visibility .5s;
 }
 
 #search {
-    max-width: 180px;
+  max-width: 180px;
 }
 
-.footnote-ref a, a.footnote-return {
-    border: none;
-    padding-left: 0.2rem;
+.footnote-ref a,
+a.footnote-return {
+  border: none;
+  padding-left: 0.2rem;
 }
 
-.is-active-link::before { background-color: var(--secondary-color); }
+.is-active-link::before {
+  background-color: var(--secondary-color);
+}
 
 .embed.video-player {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
 }
 
-iframe.youtube-player{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+iframe.youtube-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-iframe.soundcloud-player{
-    width: 100%;
-    height: 300px;
-    border: 0;
+iframe.soundcloud-player {
+  width: 100%;
+  height: 300px;
+  border: 0;
 }
 
 @media (min-width: 1200px) {
-  #contents-list>.toc-list, #tag-cloud  {
-    display: block;
-    top: 100px;
+  #contents-list>.toc-list,
+  #tag-cloud {
+      display: block;
+      top: 100px;
   }
-  #tag-cloud, #site-search{
-    -webkit-transition: opacity .5s, visibility .5s;
-    transition: opacity .5s, visibility .5s;
+  #tag-cloud,
+  #site-search {
+      -webkit-transition: opacity .5s, visibility .5s;
+      transition: opacity .5s, visibility .5s;
   }
   #site-search {
-    display: block;
-    top: 400px;
-    max-width: 250px
+      display: block;
+      top: 400px;
+      max-width: 250px
   }
 }
-@media (min-width: 1330px) { #contents-list>.toc-list { max-width: 300px; right: 3rem;}}
-#contents-list ol { list-style: none; }
+
+@media (min-width: 1330px) {
+  #contents-list>.toc-list {
+      max-width: 300px;
+      right: 3rem;
+  }
+}
+
+#contents-list ol {
+  list-style: none;
+}
 
 figure {
   margin: 2em 1em;
 }
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 1px 1px 2px 2px #bbb;
 }
+
+img.favicon {
+  display: inline;
+  max-height: 16px;
+  max-width: 16px;
+  margin-right: 10px;
+  margin-top: 10px;    
+}
+
 figcaption {
   text-align: center;
   margin-top: 0.5em;
+}
+
+video {
+  margin: 2em auto;
+  max-width: 100%;
+  box-shadow: 1px 1px 2px 2px #bbb;
 }
 
 blockquote {
@@ -167,27 +250,31 @@ blockquote p>cite {
 
 table {
   font-size: 14px;
-  border-collapse:collapse;
+  border-collapse: collapse;
   margin: 2rem auto;
-  padding:0;
+  padding: 0;
 }
 
 table tr {
-  border-top:1px solid #ccc;
-  background-color:#fff;
-  margin:0;
-  padding:0;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 table tr:nth-child(2n) {
-  background-color:#f8f8f8;
+  background-color: #f8f8f8;
 }
-table tr th[align="center"], table tr td[align="center"] {
-  text-align:center;
+
+table tr th[align="center"],
+table tr td[align="center"] {
+  text-align: center;
 }
-table tr th, table tr td {
-  border:1px solid #ccc;
-  text-align:left;
-  margin:0;
-  padding:6px 13px;
+
+table tr th,
+table tr td {
+  border: 1px solid #ccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
 }

@@ -1,36 +1,26 @@
 {{ define "main" }}
 <main class="center mv4 content-width ph3">
-  <section class="post">
-    <a class="f3 fw6 heading-color heading-font no-underline post-title" href="{{ .Permalink }}">{{ .Title }}</a>
-    <p class="silver f6 mt1 mb4 post-meta">
-      {{ if not .Date.IsZero }}<time>{{ .Date.Format "02 Jan 2006" }}</time> {{ end }}
-      {{ if or .Params.tags .Params.categories .Params.series }} | {{ end }}
-      {{ with .Params.categories }}
-      categories: [ {{ range . }}<a href='{{ "/categories/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ]
-      {{ end }}
-      {{ with .Params.tags }}
-      tags: [ {{ range . }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ]
-      {{ end }}
-      {{ with .Params.series }}
-      series: [ {{ range . }}<a href='{{ "/series/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ]
-      {{ end }}
-    </p>
-    <div class="lh-copy post-content">{{ .Content }}</div>
-  </section>
-  <aside class="comments">
-    <h2>Comments</h2>
-    {{ partial "staticman/form-comments.html" . }}
-    {{ partial "staticman/show-comments.html" . }}
-  </aside>
+    <section class="post">
+        <a class="f3 fw6 heading-color heading-font no-underline post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+        <p class="silver f6 mt1 mb4 post-meta">
+            {{ if not .Date.IsZero }}<time>{{ .Date.Format "02 Jan 2006" }}</time> {{ end }} {{ if or .Params.tags .Params.categories .Params.series }} | {{ end }} {{ with .Params.categories }} categories: [ {{ range . }}<a href='{{ "/categories/" | relLangURL }}{{ . | urlize }}'
+                class="link silver">{{ . }}</a> {{ end }} ] {{ end }} {{ with .Params.tags }} tags: [ {{ range . }}<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ] {{ end }} {{ with .Params.series }} series:
+            [ {{ range . }}<a href='{{ "/series/" | relLangURL }}{{ . | urlize }}' class="link silver">{{ . }}</a> {{ end }} ] {{ end }}
+        </p>
+        <div class="lh-copy post-content">{{ .Content }}</div>
+    </section>
+    <aside class="comments">
+        <h2>Comments</h2>
+        {{ partial "staticman/show-comments.html" . }} {{ partial "staticman/form-comments.html" . }}
+    </aside>
 </main>
 {{ partial "table-of-contents" . }}
 
 
 <div class="pagination tc tr-l db fixed-l bottom-2-l right-2-l mb3 mb0-l">
-  {{ partial "back-to-top.html" . }}<br>
-  <p class="mb0 mt2">
-  {{ with .PrevInSection }}{{ if . }}<a href="{{ .Permalink }}">prev post</a>{{ end }}{{ end }}
-  {{ with .NextInSection }}{{ if . }}<a href="{{ .Permalink }}">next post</a>{{ end }}{{ end }}
-  </p>
+    {{ partial "back-to-top.html" . }}<br>
+    <p class="mb0 mt2">
+        {{ with .PrevInSection }}{{ if . }}<a href="{{ .Permalink }}">prev post</a>{{ end }}{{ end }} {{ with .NextInSection }}{{ if . }}<a href="{{ .Permalink }}">next post</a>{{ end }}{{ end }}
+    </p>
 </div>
 {{ end }}
